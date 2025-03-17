@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <div class="container">
+    <h1 class="head"> find city details </h1>
+    <input type="text" id="info" class="input-design" placeholder="Enter your city">
+    <button onclick="cityinfo()" class="button-design" >info detail</button>
+  </div>
+
+    <div id=cities-div></div>
+
+    <script>
+       const  cities={
+        washim:{
+            name:"washim",
+            state:"maharastra",
+            country:"india",
+            info: `"Washim district is located in the western region of Vidharbha (20.1390° N, 77.1025°)
+                   Akola lies to its north, Amravati lies to its north-east, 
+                  Hingoli lies to its south, Buldhana lies to its west, Yavatmal lies to its east. 
+                  River Penganga is the main river of the district. It flows through the Tehsil of Risod.
+                  Later it flows through the boundary of Washim and Hingoli districts.
+                  River Kas is the main tributary of Penganga. River Kas meets Penganga about 1 km from 
+                  the village of Shelgaon Rajgure. River Arunavati and its tributaries originates in the
+                  Tehsil of Washim and them flows through the tehsils of Mangrul Pir and Manora into the 
+                  district of Yavatmal. River Katepurna originates in the hilly areas of the district and 
+                  flows northwards through the tehsil of Malegaon and enters the Akola district."`,
+               Image: "img.pros/washim.jpg",
+        },
+
+
+
+
+
+        amravati:{
+
+
+            name:"amravati",
+            state:"maharastra",
+            country:"india",
+            info: `Amravati  is a city in Maharashtra located in the Vidarbha region.
+                  It is the ninth largest city in Maharashtra, India & second largest city in the Vidarbha
+                  region in terms of population. It is the administrative headquarter of Amravati district 
+                  as well as Amravati Division which includes Amravati District, Akola District, 
+                  Buldhana District, Washim District & Yavatmal District. It is one of Maharashtra's 
+                 nominated cities under Smart Cities Mission.[6]`,
+                 Image: "img.pros/amt.JPG",
+
+        },
+
+        pune:{
+            name:"pune",
+            state:"maharastra",
+            country:"india",
+            info: `Pune is a sprawling city in the western Indian state of Maharashtra. 
+            It was once the base of the Peshwas (prime ministers) of the Maratha Empire, 
+            which lasted from 1674 to 1818. It's known for the grand Aga Khan Palace, 
+            built in 1892 and now a memorial to Mahatma Gandhi, whose ashes are preserved 
+            in the garden. The 8th-century Pataleshwar Cave Temple is dedicated to the
+            Hindu god shiva`,
+            Image: "img.pros/pune.jpg",
+
+        },
+        }
+
+
+       function  cityinfo(){
+        const select_city=document.getElementById("info").value.toLowerCase();
+        const city_detail=(cities[select_city])
+
+        if(!city_detail){
+            alert("city information not available")
+            return;
+        }
+
+
+        const city_data=document.getElementById("cities-div")
+
+        city_data.innerHTML=`
+                         <img src="${city_detail.Image}" "  alt=${city_detail.name}"/>
+                         <h1> name: ${city_detail.name} <h1>
+                         <h3> state: ${city_detail.state} <h3>
+
+                            <h4> country: ${city_detail.country} <h4>
+                            <p> information: ${city_detail.info} <h3>
+                         `
+
+                            }         
+
+
+
+    </script>
+
+    <style> 
+      .input-design{
+        background-color: rgb(217, 204, 190);
+        height: 30px;
+        width: 300px;
+        border-radius: 5px;
+        text-align: center;
+        margin: 30px auto;
+        align-items: center;
+        display: block;
+
+
+      }
+
+      .button-design{
+        height: 30px;
+        width: 100px;
+        border-radius: 5px;
+        background-color: rgb(219, 153, 153);
+        margin: 20px auto;
+        align-items: center;
+        display: block;
+
+
+      }
+
+      img{
+          margin-top: 10px;
+          height:400px;
+          width: fit-content;
+          display: block;
+          text-align: center;
+          margin: 50px auto;
+          border-radius: 10px;
+      }
+
+      .container{
+
+        height: 200px;
+        width: 1600px;
+        background-color: aqua;
+        margin: none;
+      }
+
+      .head{
+        text-align: center;
+        padding-top: 10px;
+        background-color: rgb(214, 178, 178);
+      }
+
+    </style>
+</body>
+</html>
